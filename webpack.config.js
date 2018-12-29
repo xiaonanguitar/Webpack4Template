@@ -70,7 +70,7 @@ module.exports = {
     },
     resolve: { //解析模块的可选项  
         // modules: [ ]//模块的查找目录 配置其他的css等文件
-        extensions: ['.js', '.less', '.css', '.png', '.jpg'],  //用到文件的扩展名
+        extensions: ['.js', '.jsx', '.less', '.css', '.png', '.jpg'],  //用到文件的扩展名
         alias: { //模快别名列表
             utils: path.resolve(__dirname,'src')
         }
