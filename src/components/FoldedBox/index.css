@@ -1,0 +1,21 @@
+.p {
+    font-size: 24px;
+    color: white;
+    width: 600px;
+    padding: 60px;
+    text-align: justify;
+    font-family: sans-serif;
+    background: #e74c3c;
+    position: relative;
+    margin: 160px auto;
+}
+
+.p::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 40px 40px 0;
+    border-style: solid;
+    border-color: #c0392b #fff;
+}

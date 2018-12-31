@@ -1,7 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Button, Modal } from 'antd';
 import MultiContext from './MultiContext';
-import 'antd/dist/antd.css';
+import Menu from './Menu';
+// import SearchBox from './SearchBox';
+// import FoldedBox from './FoldedBox';
+// import RespMenuNav from './RespMenuNav';
+// import 'antd/dist/antd.css';
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -15,6 +19,7 @@ const App = () => {
 
     return (
         <div>
+            {/*
             <h1>{count}</h1>
             <button onClick={increment}>+</button>
             <MultiContext/>
@@ -22,6 +27,8 @@ const App = () => {
             <Modal visible={visible} onOk={ () => setVisible(false)}>
                 <div>123</div>
             </Modal>
+            */}
+            <Menu/>
         </div>
     );
 };
