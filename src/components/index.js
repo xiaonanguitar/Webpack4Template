@@ -1,10 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Button, Modal } from 'antd';
 import MultiContext from './MultiContext';
-import Menu from './Menu';
+// import Menu from './Menu';
 // import SearchBox from './SearchBox';
 // import FoldedBox from './FoldedBox';
 // import RespMenuNav from './RespMenuNav';
+import RespPricingTable from './RespPricingTable';
 // import 'antd/dist/antd.css';
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
                 <div>123</div>
             </Modal>
             */}
-            <Menu/>
+            <RespPricingTable/>
         </div>
     );
 };
