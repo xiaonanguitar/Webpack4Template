@@ -7,7 +7,8 @@ import MultiContext from './MultiContext';
 // import RespMenuNav from './RespMenuNav';
 // import RespPricingTable from './RespPricingTable';
 // import 'antd/dist/antd.css';
-import ProgressBar from './ProgressBar';
+// import ProgressBar from './ProgressBar';
+import WaterAnimation from './WaterAnimation';
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -30,7 +31,7 @@ const App = () => {
                 <div>123</div>
             </Modal>
             */}
-            <ProgressBar/>
+            <WaterAnimation/>
         </div>
     );
 };
