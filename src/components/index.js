@@ -5,8 +5,9 @@ import MultiContext from './MultiContext';
 // import SearchBox from './SearchBox';
 // import FoldedBox from './FoldedBox';
 // import RespMenuNav from './RespMenuNav';
-import RespPricingTable from './RespPricingTable';
+// import RespPricingTable from './RespPricingTable';
 // import 'antd/dist/antd.css';
+import ProgressBar from './ProgressBar';
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -29,7 +30,7 @@ const App = () => {
                 <div>123</div>
             </Modal>
             */}
-            <RespPricingTable/>
+            <ProgressBar/>
         </div>
     );
 };
