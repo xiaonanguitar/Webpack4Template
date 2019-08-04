@@ -85,7 +85,7 @@ module.exports = {
         })
     ],
     devServer: {  //服务于webpack-dev-server  内部封装了一个express 
-        port: '8080',
+        port: '8081',
         before(app) {
             app.get('/api/test.json', (req, res) => {
                 res.json({

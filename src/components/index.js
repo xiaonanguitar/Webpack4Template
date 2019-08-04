@@ -9,7 +9,8 @@ import MultiContext from './MultiContext';
 // import 'antd/dist/antd.css';
 // import ProgressBar from './ProgressBar';
 // import WaterAnimation from './WaterAnimation';
-import Tooltip from './Tooltip';
+// import Tooltip from './Tooltip';
+import TargetDemo from './TargetDemo';
 
 const App = () => {
     const [count, setCount] = useState(0);
@@ -32,7 +33,7 @@ const App = () => {
                 <div>123</div>
             </Modal>
             */}
-            <Tooltip></Tooltip>
+            <TargetDemo></TargetDemo>
         </div>
     );
 };
