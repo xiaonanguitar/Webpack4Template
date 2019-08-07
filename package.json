@@ -4,7 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack --mode production --watch --progress",
+    "build": "webpack --mode production --progress",
     "start": "webpack-dev-server --mode development"
   },
   "keywords": [],

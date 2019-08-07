@@ -5,11 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')     //打包的
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 // console.log(path.resolve(__dirname,'dist')); //物理地址拼接
 module.exports = {
-    entry: './src', //入口文件  在vue-cli main.js
+    entry: {
+        index: "./src/index.js",
+        index2: "./src/test/index.js"
+    }, //入口文件  在vue-cli main.js
     output: {       //webpack如何输出
         path: path.resolve(__dirname, 'dist'), //定位，输出文件的目标路径
-        publicPath: '/',
-        filename: 'bundle.js'
+        publicPath: '/web/',
+        filename: '[name]-bundle.js'
     },
     devtool: 'eval-source-map',
     module: {       //模块的相关配置
@@ -77,8 +80,16 @@ module.exports = {
     },
     plugins: [  //插进的引用, 压缩，分离美化
         new HtmlWebpackPlugin({  //将模板的头部和尾部添加css和js模板,dist 目录发布到服务器上，项目包。可以直接上线
-            file: 'index.html', //打造单页面运用 最后运行的不是这个
-            template: 'src/index.html'  //vue-cli放在跟目录下
+            filename: 'index.html', //打造单页面运用 最后运行的不是这个
+            chunks:['index'],
+            hash: true,
+            template: './src/index.html'  //vue-cli放在跟目录下
+        }),
+        new HtmlWebpackPlugin({  //将模板的头部和尾部添加css和js模板,dist 目录发布到服务器上，项目包。可以直接上线
+            filename: 'index2.html', //打造单页面运用 最后运行的不是这个
+            chunks:['index2'],
+            hash: true,
+            template: './src/index.html'  //vue-cli放在跟目录下
         }),
         new webpack.ProvidePlugin({  //引用框架 jquery  lodash工具库是很多组件会复用的，省去了import
             '_': 'lodash'  //引用webpack
