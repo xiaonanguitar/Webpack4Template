@@ -3,11 +3,19 @@ const webpack = require('webpack'); //引入的webpack,使用lodash
 const HtmlWebpackPlugin = require('html-webpack-plugin')  //将html打包
 const ExtractTextPlugin = require('extract-text-webpack-plugin')     //打包的css拆分,将一部分抽离出来  
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const fs = require('fs');
 // console.log(path.resolve(__dirname,'dist')); //物理地址拼接
+
+// 读取写好的 loading 态的 html 和 css
+var loading = {
+    html: fs.readFileSync('./src/loading.html'),
+    css: '<style>' + fs.readFileSync('./src/loading.css') + '</style>'
+}
+
 module.exports = {
     entry: {
         index: "./src/index.js",
-        index2: "./src/test/index.js"
+        demo: "./src/demo/index.js"
     }, //入口文件  在vue-cli main.js
     output: {       //webpack如何输出
         path: path.resolve(__dirname, 'dist'), //定位，输出文件的目标路径
@@ -55,7 +63,7 @@ module.exports = {
                 }, {
                   loader: 'css-loader' // translates CSS into CommonJS
                 }, {
-                  loader: 'less-loader' // compiles Less to CSS
+                  loader: 'less-loader', // compiles Less to CSS
                 }]
             },
             {       //图片loader
@@ -83,13 +91,15 @@ module.exports = {
             filename: 'index.html', //打造单页面运用 最后运行的不是这个
             chunks:['index'],
             hash: true,
-            template: './src/index.html'  //vue-cli放在跟目录下
+            template: './src/index.html',  //vue-cli放在跟目录下
+            loading: loading
         }),
         new HtmlWebpackPlugin({  //将模板的头部和尾部添加css和js模板,dist 目录发布到服务器上，项目包。可以直接上线
-            filename: 'index2.html', //打造单页面运用 最后运行的不是这个
-            chunks:['index2'],
+            filename: 'demo.html', //打造单页面运用 最后运行的不是这个
+            chunks:['demo'],
             hash: true,
-            template: './src/index.html'  //vue-cli放在跟目录下
+            template: './src/index.html',  //vue-cli放在跟目录下
+            loading: loading
         }),
         new webpack.ProvidePlugin({  //引用框架 jquery  lodash工具库是很多组件会复用的，省去了import
             '_': 'lodash'  //引用webpack
@@ -104,6 +114,10 @@ module.exports = {
                     message: 'Hello World'
                 })
             })
+        },
+        proxy: {
+            '/api': 'http://localhost:8080/',
+            changeOrigin: true
         }
     }
     

@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <title>webpack-demo</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <%= htmlWebpackPlugin.options.loading.css %>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="content"><%= htmlWebpackPlugin.options.loading.html %></div>
 </body>
 </html>

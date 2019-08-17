@@ -32,6 +32,9 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "express": "~4.15.4",
+    "mongoose": "~4.11.11",
+    "body-parser": "~1.18.0",
     "antd": "^2.13.14",
     "aphrodite": "^2.2.2",
     "react": "^16.7.0-alpha.0",
