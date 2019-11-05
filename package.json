@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "express": "~4.15.4",
-    "mongoose": "~4.11.11",
+    "mongoose": "~5.7.8",
     "body-parser": "~1.18.0",
     "antd": "^2.13.14",
     "aphrodite": "^2.2.2",
